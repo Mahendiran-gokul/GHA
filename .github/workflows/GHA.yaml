@@ -1,0 +1,27 @@
+name: Valitation
+on: workflow_dispatch
+jobs:
+  Validate:
+    name: deploy to staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run action
+        id: yamllint
+        uses: jacobtomlinson/gha-lint-yaml@master
+        with:
+          path: 'subscriptions.yml'
+          
+      - name: Check outputs
+        run: |
+           echo "There were ${{ steps.yamllint.outputs.warnings }} YAML linting warnings."
+       
+      - name: Get last user
+        run: |
+        # Get the value of the `user` field from the last line of sub.yml
+        LAST_USER=$(sed -n '/^\s*- user:/s/.*: *//p' subscriptions.yml | tail -n1 | cut -d ' ' -f 1)
+        # Set an environment variable for the last user
+        echo "LAST_USER=$user" >> $GITHUB_ENV
+        echo "last user is $LAST_USER"
+        
