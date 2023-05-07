@@ -19,7 +19,7 @@ jobs:
        
       - name: Get last user
         run: |
-          # Get the value of the `user` field from the last line of sub.yml
+          # Get the value of the `user` field from the last line of subscriptions.yml
           LAST_USER=$(sed -n '/^\s*- user:/s/.*: *//p'subscriptions.yml | tail -n1 | cut -d ' ' -f 1)
           # Set an environment variable for the last user
           echo "LAST_USER=$user" >> $GITHUB_ENV
