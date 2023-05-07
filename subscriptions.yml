@@ -1,0 +1,7 @@
+resource:
+    user: brad.janke@kanini.com
+    cloud: azure
+    department: cloud
+    type: subscription
+    name: FakeCompanyPOC
+    reason: POC for Fake Company
