@@ -11,7 +11,7 @@ resource:
     type: subscription
     name: FakeCompanyPOC
     reason: POC for Fake Company
- - user: gokul.rajimahendiran.@kanini.com
+ #- user: gokul.rajimahendiran.@kanini.com
     cloud: azure
     department: cloud
     type: subscription
