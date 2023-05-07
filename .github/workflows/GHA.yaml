@@ -22,6 +22,6 @@ jobs:
           # Get the value of the `user` field from the last line of subscriptions.yml
           LAST_USER=$(cat subscriptions.yml| grep -E "^\s+- user:" | tail -n1 | awk '{print $3}')
           # Set an environment variable for the last user
-          echo "LAST_USER=$user" >> $GITHUB_ENV
+          echo "LAST_USER=$LAST_USER" >> $GITHUB_ENV
           echo "last user is $LAST_USER"
         
