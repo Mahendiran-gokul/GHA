@@ -1,5 +1,5 @@
 resource:
-    user: brad.janke@kanini.com
+  - user: brad.janke@kanini.com
     cloud: azure
     department: cloud
     type: subscription
